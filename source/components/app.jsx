@@ -38,12 +38,14 @@ const App = () => (
     </Navbar>
     <Grid className="content">
       <Row>
-        <Col xs={12} sm={3} md={3}>
+        <Col xs={12} sm={3} md={3} className="filter-container">
           <h3>Search:</h3>
           <Search />
           <h3>by Category</h3>
           <CategoryList categories={categories} />
           <h3>by Price:</h3>
+          <input type="range" id="myRange" value="90" />
+
         </Col>
         <Col xs={12} sm={9} md={9}>
           <Row className="results">
