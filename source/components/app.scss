@@ -1,0 +1,21 @@
+.app {
+  height: 100vh;
+
+  .navbar {
+    border-radius: 0px;
+  }
+
+  .content {
+    overflow: scroll;
+    padding-bottom: 50px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 5px;
+    background-color: #222;
+    color: white;
+  }
+}
