@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavDropdown, MenuItem, Navbar, NavItem, Nav, Grid, Row, Col } from 'react-bootstrap';
 import CourseItem from './common/courseItem.jsx';
+import Search from './common/search.jsx';
+import CategoryList from './common/categoryList.jsx';
+
 import Logo from '../../assets/logo.svg';
 
 import './app.scss';
@@ -11,6 +14,8 @@ const item = {
   category: 'History',
   price: '100'
 };
+
+const categories = ['Calculus', 'Language', 'History'];
 
 const App = () => (
   <div className="app">
@@ -34,7 +39,11 @@ const App = () => (
     <Grid className="content">
       <Row>
         <Col xs={12} sm={3} md={3}>
-          Search
+          <h3>Search:</h3>
+          <Search />
+          <h3>by Category</h3>
+          <CategoryList categories={categories} />
+          <h3>by Price:</h3>
         </Col>
         <Col xs={12} sm={9} md={9}>
           <Row className="results">
