@@ -4,10 +4,12 @@ This application is build for the Inspire Trial Assignment. It should be a respo
 
 ## Overview Of Activities ##
 
-~ 1 hour - Creating boilerplate which has all the basic necessities to run the application or develop code
-~ 30 mins - Designing the basic layout for mobile, tablet and desktop
-~ 15 mins - Defining components needed to build basic layout
-~ 1 hour - Building basic layout for all devices with a sticky footer and some mock cards
+- 1 hour - Creating boilerplate which has all the basic necessities to run the application or develop code
+- 30 mins - Designing the basic layout for mobile, tablet and desktop
+- 15 mins - Defining components needed to build basic layout
+- 1 hour - Building basic layout for all devices with a sticky footer and some mock cards
+- 30 hour - Overthinking how to implement filtering by course name
+- 45 mins - Building filtering by course name
 
 ## Dependencies ##
 
