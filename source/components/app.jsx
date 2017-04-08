@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavDropdown, MenuItem, Navbar, NavItem, Nav, Grid, Row, Col } from 'react-bootstrap';
 import CourseItem from './common/courseItem.jsx';
-import Search from './common/search.jsx';
+import SearchContainer from '../containers/search.js';
+import CoursesContainer from '../containers/courses.js';
+
 import CategoryList from './common/categoryList.jsx';
 
 import Logo from '../../assets/logo.svg';
@@ -40,28 +42,10 @@ const App = () => (
       <Row>
         <Col xs={12} sm={3} md={3} className="filter-container">
           <h3>Search:</h3>
-          <Search />
-          <h3>by Category</h3>
-          <CategoryList categories={categories} />
-          <h3>by Price:</h3>
-          <input type="range" id="myRange" value="90" />
-
+          <SearchContainer />
         </Col>
         <Col xs={12} sm={9} md={9}>
-          <Row className="results">
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-          </Row>
+          <CoursesContainer />
         </Col>
       </Row>
     </Grid>

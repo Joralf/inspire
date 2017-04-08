@@ -7,6 +7,8 @@ import Bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 import reduxApp from './reducers/index';
 
+import { filterBySearchString } from './actions/filter';
+
 let store = createStore(reduxApp);
 
 render(
@@ -15,3 +17,7 @@ render(
   </Provider>,
   document.getElementById('app')
 );
+
+// store.dispatch(filterBySearchString('Whatever')).then(() =>
+//   console.log(store.getState())
+// );
