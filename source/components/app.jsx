@@ -19,7 +19,7 @@ const categories = ['Calculus', 'Language', 'History'];
 
 const App = () => (
   <div className="app">
-    <Navbar className="navbar" inverse collapseOnSelect>
+    <Navbar className="header" inverse collapseOnSelect>
       <Navbar.Header>
         <Navbar.Brand>
           <img src={Logo} alt="logo" />
@@ -36,35 +36,24 @@ const App = () => (
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    <Grid className="content">
-      <Row>
-        <Col xs={12} sm={3} md={3} className="filter-container">
-          <h3>Search:</h3>
-          <Search />
-          <h3>by Category</h3>
-          <CategoryList categories={categories} />
-          <h3>by Price:</h3>
-          <input type="range" id="myRange" value="90" />
+    <div className="body">
+      <div className="filter">
+            <h3>Search:</h3>
+            <Search />
+            <h3>by Category</h3>
+            <CategoryList categories={categories} />
+            <h3>by Price:</h3>
+            <input type="range" id="myRange" value="90" />
 
-        </Col>
-        <Col xs={12} sm={9} md={9}>
-          <Row className="results">
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-              <CourseItem item={item} />
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Grid>
+      </div>
+      <div className="content">
+                <CourseItem item={item} />
+                <CourseItem item={item} />
+                <CourseItem item={item} />
+                <CourseItem item={item} />
+
+      </div>
+    </div>
     <div className="footer">
       &copy; 2017
     </div>

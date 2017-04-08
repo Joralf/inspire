@@ -1,24 +1,36 @@
 .app {
-  height: 100vh;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 
-  .navbar {
+  .header {
     border-radius: 0px;
   }
 
-  .content {
-    overflow: scroll;
-    padding-bottom: 50px;
-    .filter-container {
-      padding: 20px 10px;
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    @media(min-width:768px) {
+      flex-direction: row;
     }
   }
 
-  .footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    padding: 5px;
-    background-color: #222;
-    color: white;
+  .filter {
+    flex: 0 0 12em;
   }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    // @media(min-width:768px) {
+    //   flex-direction: row;
+    // }
+  }
+
+  .footer {
+    flex: none;
+  }
+
 }
