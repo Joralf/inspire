@@ -2,11 +2,7 @@ const initialState = {
   minPrice: 0,
   maxPrice: 200,
   searchText: '',
-  categories: [
-    { name: 'Calculus', active: false },
-    { name: 'History', active: false },
-    { name: 'Language', active: false }
-  ]
+  categories: []
 };
 
 const filters = (state = initialState, action) => {
@@ -20,17 +16,18 @@ const filters = (state = initialState, action) => {
         minPrice: action.minPrice,
         maxPrice: action.maxPrice
       });
-    case 'CHANGE_CATEGORY_FILTER':
+    case 'ADD_CATEGORY_FILTER':
       return Object.assign({}, state, {
-        categories: state.categories.map((category) => {
-          if (category.name === action.category.name) {
-            return {
-              name: action.category.name,
-              active: !action.category.active
-            };
-          }
-          return category;
-        })
+        categories: [
+          ...state.categories,
+          action.category,
+        ],
+      });
+    case 'REMOVE_CATEGORY_FILTER':
+      return Object.assign({}, state, {
+        categories: [
+          ...state.categories.filter(category => (category !== action.category))
+        ],
       });
     default:
       return state;

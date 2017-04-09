@@ -1,6 +1,7 @@
 export const FILTERBYSEARCH = 'FILTERBYSEARCH';
 export const FILTERBYPRICE = 'FILTERBYPRICE';
-export const CHANGE_CATEGORY_FILTER = 'CHANGE_CATEGORY_FILTER';
+export const ADD_CATEGORY_FILTER = 'ADD_CATEGORY_FILTER';
+export const REMOVE_CATEGORY_FILTER = 'REMOVE_CATEGORY_FILTER';
 
 export function filterBySearch(searchString) {
   return {
@@ -17,9 +18,16 @@ export function filterByPrice(minPrice, maxPrice) {
   };
 }
 
-export function changeCategoryFilter(category) {
+export function addCategoryFilter(category) {
   return {
-    type: 'CHANGE_CATEGORY_FILTER',
+    type: 'ADD_CATEGORY_FILTER',
+    category,
+  };
+}
+
+export function removeCategoryFilter(category) {
+  return {
+    type: 'REMOVE_CATEGORY_FILTER',
     category,
   };
 }

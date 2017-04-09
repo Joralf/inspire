@@ -1,16 +1,18 @@
 import React, { PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 
-const CategoryList = ({ onHandleChange, categories }) => (
+const CategoryList = ({ onHandleChange, categories, activeCategories }) => (
   <div>
     {categories.map((category) => {
+      const active = activeCategories.indexOf(category) > -1;
+
       return (
         <Button
-          onClick={() => onHandleChange(category)}
-          key={category.name}
-          active={category.active}
+          onClick={() => onHandleChange(category, active)}
+          key={category}
+          active={active}
         >
-          {category.name}
+          {category}
         </Button>
       );
     })}
@@ -18,14 +20,13 @@ const CategoryList = ({ onHandleChange, categories }) => (
 );
 
 CategoryList.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    active: PropTypes.bool.isRequired,
-  })),
+  activeCategories: PropTypes.arrayOf(PropTypes.string.isRequired),
+  categories: PropTypes.arrayOf(PropTypes.string.isRequired),
   onHandleChange: PropTypes.func.isRequired,
 };
 
 CategoryList.defaultProps = {
+  activeCategories: [],
   categories: [],
 };
 

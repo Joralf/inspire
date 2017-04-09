@@ -1,23 +1,26 @@
 import { connect } from 'react-redux';
 import CourseList from '../components/common/courseList.jsx';
 
+import { applyPriceFilter, applySearchFilter, applyCategoryFilter } from '../helpers/courseFilters.js';
+
 const mapStateToProps = (state) => {
   const results = state.courses.results;
-  const { searchString, minPrice, maxPrice } = state.filters;
-  const searchFilterString = searchString ? searchString.toLowerCase() : ''; // convert to lowercase for usability
+  const { searchString, minPrice, maxPrice, categories } = state.filters;
 
   return {
     courses: results.filter((result) => {
-      const name = result.name.toLowerCase();
-      const description = result.description.toLowerCase();
-      const price = result.price;
+      const filters = [];
+      filters.push(applyPriceFilter(result, minPrice, maxPrice));
 
-      return (
-        // name or description contains searchFilterString
-        (name.indexOf(searchFilterString) > -1 || description.indexOf(searchFilterString) > -1)
-        // and price is within minPrice and maxPrice
-        && (price >= minPrice && price <= maxPrice)
-      );
+      if (searchString) {
+        filters.push(applySearchFilter(result, searchString));
+      }
+
+      if (categories.length > 0) {
+        filters.push(applyCategoryFilter(result, categories));
+      }
+
+      return filters.every(item => (item === true));
     })
   };
 };
