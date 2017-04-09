@@ -1,5 +1,6 @@
 export const FILTERBYSEARCH = 'FILTERBYSEARCH';
 export const FILTERBYPRICE = 'FILTERBYPRICE';
+export const CHANGE_CATEGORY_FILTER = 'CHANGE_CATEGORY_FILTER';
 
 export function filterBySearch(searchString) {
   return {
@@ -13,5 +14,12 @@ export function filterByPrice(minPrice, maxPrice) {
     type: 'FILTERBYPRICE',
     minPrice,
     maxPrice,
+  };
+}
+
+export function changeCategoryFilter(category) {
+  return {
+    type: 'CHANGE_CATEGORY_FILTER',
+    category,
   };
 }

@@ -71,7 +71,4 @@ export default {
     category: 'Language',
     price: 20
   }],
-  minPrice: 0,
-  maxPrice: 200,
-  searchText: ''
 };
