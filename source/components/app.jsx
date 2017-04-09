@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavDropdown, MenuItem, Navbar, NavItem, Nav, Grid, Row, Col } from 'react-bootstrap';
 import SearchContainer from '../containers/search.js';
+import PriceFilter from '../containers/priceFilter.js';
+
 import CoursesContainer from '../containers/courses.js';
 
 import Logo from '../../assets/logo.svg';
@@ -32,6 +34,7 @@ const App = () => (
           <h3>Search:</h3>
           <SearchContainer />
           <h3>by Price:</h3>
+          <PriceFilter />
         </Col>
         <Col xs={12} sm={9} md={9}>
           <CoursesContainer />
