@@ -2,18 +2,21 @@
   height: 100vh;
 
   .navbar {
+    height: 10vh;
     border-radius: 0px;
+    margin-bottom: 0px;
   }
 
   .content {
+    height: 85vh;
     overflow: scroll;
-    padding-bottom: 50px;
     .filter-container {
       padding: 20px 10px;
     }
   }
 
   .footer {
+    height: 5vh;
     position: fixed;
     bottom: 0px;
     width: 100%;

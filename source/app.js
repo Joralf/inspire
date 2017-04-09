@@ -3,13 +3,11 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './components/app.jsx';
-import Bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-import reduxApp from './reducers/index';
+import rootReducer from './reducers/index';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-import { filterBySearchString } from './actions/filter';
-
-let store = createStore(reduxApp);
+const store = createStore(rootReducer);
 
 render(
   <Provider store={store}>
@@ -17,7 +15,3 @@ render(
   </Provider>,
   document.getElementById('app')
 );
-
-// store.dispatch(filterBySearchString('Whatever')).then(() =>
-//   console.log(store.getState())
-// );

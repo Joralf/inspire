@@ -1,23 +1,11 @@
 import React from 'react';
 import { NavDropdown, MenuItem, Navbar, NavItem, Nav, Grid, Row, Col } from 'react-bootstrap';
-import CourseItem from './common/courseItem.jsx';
 import SearchContainer from '../containers/search.js';
 import CoursesContainer from '../containers/courses.js';
-
-import CategoryList from './common/categoryList.jsx';
 
 import Logo from '../../assets/logo.svg';
 
 import './app.scss';
-
-const item = {
-  name: 'Science',
-  description: 'lalalalalalaala, werwerew, werwerwe. Hallo ik ben sjaak',
-  category: 'History',
-  price: '100'
-};
-
-const categories = ['Calculus', 'Language', 'History'];
 
 const App = () => (
   <div className="app">
@@ -43,6 +31,7 @@ const App = () => (
         <Col xs={12} sm={3} md={3} className="filter-container">
           <h3>Search:</h3>
           <SearchContainer />
+          <h3>by Price:</h3>
         </Col>
         <Col xs={12} sm={9} md={9}>
           <CoursesContainer />

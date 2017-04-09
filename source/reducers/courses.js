@@ -22,16 +22,34 @@ const initialState = {
     description: 'World War II, a brief overview',
     category: 'History',
     price: '200'
+  },
+  {
+    name: 'World War II: Italy',
+    description: 'World War II, Italy',
+    category: 'History',
+    price: '200'
+  },
+  {
+    name: 'World War III',
+    description: 'World War III, a projection...',
+    category: 'History',
+    price: '200'
+  },
+  {
+    name: 'Vietnam War',
+    description: 'An ugly era',
+    category: 'History',
+    price: '200'
   }],
-  searchText: ""
+  searchText: ''
 };
 
 const courses = (state = initialState, action) => {
   switch (action.type) {
     case 'FILTERBYSEARCH':
-        return Object.assign({}, state, {
-            searchText: action.queryString
-        });
+      return Object.assign({}, state, {
+        searchText: action.queryString
+      });
     default:
       return state;
   }

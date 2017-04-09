@@ -20,16 +20,13 @@ class Search extends React.Component {
   render() {
     return (
       <form>
-        <FormGroup
-          controlId="formBasicText"
-        >
+        <FormGroup>
           <FormControl
             type="text"
             value={this.state.value}
             placeholder=""
             onChange={this.onHandleChange}
           />
-          <FormControl.Feedback />
         </FormGroup>
       </form>
     );
