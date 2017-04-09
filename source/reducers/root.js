@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import filters from './filters';
-import courses from './courses';
+import filters from './filters.js';
+import courses from './courses.js';
 
 const rootRecucer = combineReducers({
   filters,

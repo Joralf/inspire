@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { filterBySearch } from '../actions/filter';
+import { filterBySearch } from '../actions/filter.js';
 import Search from '../components/common/search.jsx';
 
 const mapStateToProps = () => ({});

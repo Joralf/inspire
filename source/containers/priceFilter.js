@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { filterByPrice } from '../actions/filter';
+import { filterByPrice } from '../actions/filter.js';
 import Slider from '../components/common/slider.jsx';
 
-import { min, max } from '../helpers/array';
+import { min, max } from '../helpers/array.js';
 
 const mapStateToProps = state => (
   {

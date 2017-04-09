@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addCategoryFilter, removeCategoryFilter } from '../actions/filter';
+import { addCategoryFilter, removeCategoryFilter } from '../actions/filter.js';
 import CategoryList from '../components/common/categoryList.jsx';
 
 const mapStateToProps = state => ({
