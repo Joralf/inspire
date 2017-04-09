@@ -2,32 +2,22 @@ import { connect } from 'react-redux';
 import { filterByPrice } from '../actions/filter';
 import Slider from '../components/common/slider.jsx';
 
-const min = (array, key) => {
-  return array.reduce((prev, curr) => {
-    return prev[key] < curr[key] ? prev : curr;
-  })[key];
-};
+import { min, max } from '../helpers/array';
 
-const max = (array, key) => {
-  return array.reduce((prev, curr) => {
-    return prev[key] > curr[key] ? prev : curr;
-  })[key];
-};
+const mapStateToProps = state => (
+  {
+    minValue: min(state.courses.results, 'price'),
+    maxValue: max(state.courses.results, 'price'),
+  }
+);
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    minValue: 50,
-    maxValue: 200,
-  };
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
+const mapDispatchToProps = dispatch => (
+  {
     onHandleChange: (values) => {
       dispatch(filterByPrice(values[0], values[1]));
     }
-  };
-};
+  }
+);
 
 const priceFilterContainer = connect(
   mapStateToProps,

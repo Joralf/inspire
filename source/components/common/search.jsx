@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { FormGroup, FormControl } from 'react-bootstrap';
 
 class Search extends React.Component {
@@ -12,9 +12,10 @@ class Search extends React.Component {
   }
 
   onHandleChange(e) {
-    const queryString = e.target.value;
-    this.props.onHandleChange(queryString);
-    this.setState({ value: queryString });
+    const searchString = e.target.value;
+
+    this.props.onHandleChange(searchString);
+    this.setState({ value: searchString });
   }
 
   render() {
@@ -34,7 +35,7 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  onHandleChange: React.PropTypes.func.isRequired,
+  onHandleChange: PropTypes.func.isRequired,
 };
 
 export default Search;

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Rheostat from 'rheostat';
+
 import './slider.scss';
 
 class Slider extends React.Component {
@@ -16,34 +17,43 @@ class Slider extends React.Component {
 
   onHandleChange(e) {
     const values = e.values;
+
     this.props.onHandleChange(values);
     this.setState({ values });
   }
 
+  getMinSlider() {
+    return this.state.values[0];
+  }
+
+  getMaxSlider() {
+    return this.state.values[1];
+  }
+
   render() {
     return (
-      <div>
+      <div className="price-slider">
         <Rheostat
           min={this.props.minValue}
           max={this.props.maxValue}
           values={this.state.values}
           onChange={this.onHandleChange}
         />
-        between {this.state.values[0]} and {this.state.values[1]} euros
+        <div className="price-label-min">
+          Min. &euro; {this.getMinSlider()},-
+        </div>
+        <div className="price-label-max">
+          Max. &euro;{this.getMaxSlider()},-
+        </div>
       </div>
     );
   }
 }
 
 Slider.propTypes = {
-  onHandleChange: React.PropTypes.func.isRequired,
-  minValue: React.PropTypes.number,
-  maxValue: React.PropTypes.number
-};
-
-Slider.defaultProps = {
-  minValue: 0,
-  maxValue: 100
+  onHandleChange: PropTypes.func.isRequired,
+  minValue: PropTypes.number.isRequired,
+  maxValue: PropTypes.number.isRequired
 };
 
 export default Slider;

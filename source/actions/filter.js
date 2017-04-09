@@ -1,10 +1,10 @@
 export const FILTERBYSEARCH = 'FILTERBYSEARCH';
 export const FILTERBYPRICE = 'FILTERBYPRICE';
 
-export function filterBySearchString(queryString) {
+export function filterBySearch(searchString) {
   return {
     type: 'FILTERBYSEARCH',
-    queryString,
+    searchString,
   };
 }
 

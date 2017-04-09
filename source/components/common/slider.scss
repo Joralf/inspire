@@ -1,5 +1,22 @@
+.price-slider {
+  padding: 10px;
+  position: relative;
+}
+
+.price-label-min {
+  position: absolute;
+  left: 0px
+}
+
+.price-label-max {
+  position: absolute;
+  right: 0px
+}
+
 .rheostat {
   overflow: visible;
+  margin: 0 10px;
+  height: 15px;
 }
 
 .rheostat-background {
@@ -22,4 +39,12 @@
   outline: none;
   z-index: 2;
   width: 24px;
+}
+
+.rheostat-handle:before,
+.rheostat-handle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: red;
 }

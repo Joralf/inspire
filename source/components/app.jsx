@@ -1,12 +1,11 @@
 import React from 'react';
 import { NavDropdown, MenuItem, Navbar, NavItem, Nav, Grid, Row, Col } from 'react-bootstrap';
-import SearchContainer from '../containers/search.js';
-import PriceFilter from '../containers/priceFilter.js';
 
 import CoursesContainer from '../containers/courses.js';
+import SearchFilter from '../containers/searchFilter.js';
+import PriceFilter from '../containers/priceFilter.js';
 
 import Logo from '../../assets/logo.svg';
-
 import './app.scss';
 
 const App = () => (
@@ -30,13 +29,13 @@ const App = () => (
     </Navbar>
     <Grid className="content">
       <Row>
-        <Col xs={12} sm={3} md={3} className="filter-container">
-          <h3>Search:</h3>
-          <SearchContainer />
-          <h3>by Price:</h3>
+        <Col xs={12} sm={12} md={3} className="filter-container">
+          <h3>Filter by search:</h3>
+          <SearchFilter />
+          <h3>Filter by Price:</h3>
           <PriceFilter />
         </Col>
-        <Col xs={12} sm={9} md={9}>
+        <Col xs={12} sm={12} md={9} className="results-container">
           <CoursesContainer />
         </Col>
       </Row>

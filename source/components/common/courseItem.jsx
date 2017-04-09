@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+
 import './courseItem.scss';
 
 const CourseItem = ({ item }) => (
   <div className="card" >
     <h3>{item.name}</h3>
-    <div className="card-container">
-      <div>Category: {item.category}</div>
-      <div>Price: {item.price}</div>
-      <div>Description: {item.description}</div>
-    </div>
+    <div>Category: {item.category}</div>
+    <div>Price: &euro;{item.price},-</div>
+    <div>Description: {item.description}</div>
   </div>
 );
 
 CourseItem.propTypes = {
-  item: React.PropTypes.shape({}).isRequired,
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default CourseItem;
