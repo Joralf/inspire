@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const CategoryList = ({ onHandleChange, categories, activeCategories }) => (
   <div>
